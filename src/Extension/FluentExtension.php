@@ -851,7 +851,7 @@ class FluentExtension extends DataExtension
      * @param string $locale
      * @return string
      */
-    public function getLinkingMode($locale)
+    public function getLinkingMode($locale = null)
     {
         if ($this->owner->hasMethod('canViewInLocale') && !$this->owner->canViewInLocale($locale)) {
             return 'invalid';
@@ -870,7 +870,7 @@ class FluentExtension extends DataExtension
      * @param string $locale Locale
      * @return string
      */
-    public function BaseURLForLocale($locale)
+    public function BaseURLForLocale($locale = null)
     {
         $localeObject = Locale::getByLocale($locale);
         if (!$localeObject) {
